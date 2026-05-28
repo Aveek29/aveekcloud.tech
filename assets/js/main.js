@@ -267,6 +267,10 @@ function initContactForm() {
   const form = document.getElementById('portfolio-contact');
   if (!form) return;
 
+  (function () {
+    try { emailjs.init('ww9lc62LvSjO7o1jP'); } catch (e) {}
+  })();
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const btn = form.querySelector('button[type="submit"]');
@@ -282,24 +286,35 @@ function initContactForm() {
     btn.disabled = true;
     btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Sending...';
 
-    setTimeout(() => {
+    emailjs.send('service_97a6zs', 'template_knpmyoi', {
+      from_name: name,
+      from_email: email,
+      message: message,
+      to_email: 'aveekpatel@gmail.com',
+    })
+    .then(() => {
       btn.innerHTML = '<i class="fa-solid fa-circle-check"></i> Sent Successfully!';
       btn.style.background = 'linear-gradient(135deg, #10B981, #059669)';
       btn.style.boxShadow = '0 0 20px rgba(16,185,129,0.4)';
       form.reset();
-
+    })
+    .catch(() => {
+      btn.innerHTML = '<i class="fa-solid fa-circle-xmark"></i> Failed — try again';
+      btn.style.background = 'linear-gradient(135deg, #EF4444, #DC2626)';
+      btn.style.boxShadow = '0 0 20px rgba(239,68,68,0.4)';
+    })
+    .finally(() => {
       setTimeout(() => {
         btn.disabled = false;
         btn.innerHTML = orig;
         btn.style.background = '';
         btn.style.boxShadow = '';
       }, 3000);
-    }, 1200);
+    });
   });
 }
 
 function initThemeToggle() {
-  const themes = ['dark-neon', 'light', 'cyberpunk', 'aurora', 'sunset'];
   const saved = localStorage.getItem('portfolio-theme') || 'dark-neon';
   const dropdown = document.querySelector('.theme-dropdown');
   const options = document.querySelectorAll('.theme-option');

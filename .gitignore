@@ -1,6 +1,10 @@
 # Private files & Originals (not for public GitHub)
 /originals/
 
+# Node (dev/test artifacts)
+node_modules/
+package-lock.json
+
 # OS files
 Thumbs.db
 .DS_Store
