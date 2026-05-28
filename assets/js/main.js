@@ -1,8 +1,3 @@
-/* ==========================================================================
-   Aveek Patel - Portfolio Interactions
-   Canvas Particles, Typewriter, Scrollspy, Tabs, Theme
-   ========================================================================== */
-
 document.addEventListener('DOMContentLoaded', () => {
   hideLoader();
   initCanvasParticles();
@@ -21,22 +16,22 @@ function hideLoader() {
   setTimeout(() => loader.classList.add('hidden'), 1500);
 }
 
-/* ==========================================================================
-   1. Canvas Particle System
-   ========================================================================== */
 function initCanvasParticles() {
   const canvas = document.getElementById('bg-canvas');
   if (!canvas) return;
+  const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
   const ctx = canvas.getContext('2d');
   let particles = [];
   let animId;
   const mouse = { x: null, y: null, radius: 120 };
 
-  const onMouse = (e) => { mouse.x = e.clientX; mouse.y = e.clientY; };
-  const onLeave = () => { mouse.x = null; mouse.y = null; };
-  window.addEventListener('mousemove', onMouse);
-  window.addEventListener('mouseleave', onLeave);
+  if (!isTouch) {
+    const onMouse = (e) => { mouse.x = e.clientX; mouse.y = e.clientY; };
+    const onLeave = () => { mouse.x = null; mouse.y = null; };
+    window.addEventListener('mousemove', onMouse);
+    window.addEventListener('mouseleave', onLeave);
+  }
 
   class Particle {
     constructor(x, y) {
@@ -88,7 +83,9 @@ function initCanvasParticles() {
 
   function populate() {
     particles = [];
-    const count = Math.min(60, Math.floor((canvas.width * canvas.height) / 20000));
+    const maxP = isTouch ? 25 : 60;
+    const divisor = isTouch ? 35000 : 20000;
+    const count = Math.min(maxP, Math.floor((canvas.width * canvas.height) / divisor));
     for (let i = 0; i < count; i++) {
       particles.push(new Particle(Math.random() * canvas.width, Math.random() * canvas.height));
     }
@@ -121,10 +118,14 @@ function initCanvasParticles() {
     animId = requestAnimationFrame(loop);
   }
 
+  let resizeTimer;
   function resize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    populate();
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      populate();
+    }, 200);
   }
 
   window.addEventListener('resize', resize);
@@ -134,18 +135,8 @@ function initCanvasParticles() {
   window.addEventListener('themeChanged', () => {
     for (const p of particles) p.updateColor();
   });
-
-  // Cleanup on page unload
-  window.addEventListener('beforeunload', () => {
-    cancelAnimationFrame(animId);
-    window.removeEventListener('mousemove', onMouse);
-    window.removeEventListener('mouseleave', onLeave);
-  });
 }
 
-/* ==========================================================================
-   2. Typewriter
-   ========================================================================== */
 function initTypewriter() {
   const target = document.getElementById('typed-text');
   if (!target) return;
@@ -194,15 +185,31 @@ function initTypewriter() {
   setTimeout(type, 1200);
 }
 
-/* ==========================================================================
-   3. Navigation
-   ========================================================================== */
 function initNavigation() {
   const header = document.querySelector('header');
   const hamburger = document.querySelector('.hamburger');
   const nav = document.querySelector('nav');
+  const overlay = document.querySelector('.nav-overlay');
   const navLinks = document.querySelectorAll('nav a');
   const sections = document.querySelectorAll('section[id]');
+
+  function closeNav() {
+    nav.classList.remove('active');
+    if (overlay) overlay.classList.remove('active');
+    document.body.classList.remove('nav-open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    const icon = hamburger.querySelector('i');
+    if (icon) icon.className = 'fa-solid fa-bars';
+  }
+
+  function openNav() {
+    nav.classList.add('active');
+    if (overlay) overlay.classList.add('active');
+    document.body.classList.add('nav-open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    const icon = hamburger.querySelector('i');
+    if (icon) icon.className = 'fa-solid fa-xmark';
+  }
 
   window.addEventListener('scroll', () => {
     header.classList.toggle('scrolled', window.scrollY > 40);
@@ -223,28 +230,23 @@ function initNavigation() {
 
   if (hamburger && nav) {
     hamburger.addEventListener('click', () => {
-      const isActive = nav.classList.toggle('active');
-      hamburger.setAttribute('aria-expanded', isActive);
-      const icon = hamburger.querySelector('i');
-      if (icon) {
-        icon.className = isActive ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+      if (nav.classList.contains('active')) {
+        closeNav();
+      } else {
+        openNav();
       }
     });
 
+    if (overlay) {
+      overlay.addEventListener('click', closeNav);
+    }
+
     navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        nav.classList.remove('active');
-        hamburger.setAttribute('aria-expanded', 'false');
-        const icon = hamburger.querySelector('i');
-        if (icon) icon.className = 'fa-solid fa-bars';
-      });
+      link.addEventListener('click', closeNav);
     });
   }
 }
 
-/* ==========================================================================
-   4. Tabs
-   ========================================================================== */
 function initTabs() {
   const buttons = document.querySelectorAll('.tab-btn');
   const contents = document.querySelectorAll('.tab-content');
@@ -261,9 +263,6 @@ function initTabs() {
   });
 }
 
-/* ==========================================================================
-   5. Contact Form
-   ========================================================================== */
 function initContactForm() {
   const form = document.getElementById('portfolio-contact');
   if (!form) return;
@@ -299,9 +298,6 @@ function initContactForm() {
   });
 }
 
-/* ==========================================================================
-   6. Theme Toggle
-   ========================================================================== */
 function initThemeToggle() {
   const themes = ['dark-neon', 'light', 'cyberpunk', 'aurora', 'sunset'];
   const saved = localStorage.getItem('portfolio-theme') || 'dark-neon';
@@ -342,9 +338,6 @@ function initThemeToggle() {
   });
 }
 
-/* ==========================================================================
-   7. Scroll Reveal
-   ========================================================================== */
 function initScrollReveal() {
   const cards = document.querySelectorAll(
     '.glass-card, .section-header, .project-card, .cert-card, .aerospace-card, .timeline-item, .contact-method, .contact-form'
