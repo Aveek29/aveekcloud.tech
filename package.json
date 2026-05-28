@@ -1,5 +1,6 @@
 {
   "scripts": {
-    "dev": "npx serve ."
+    "dev": "npx serve .",
+    "vercel-build": "echo 'Static site — no build required'"
   }
 }
