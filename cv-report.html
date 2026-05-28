@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aveek Patel — Detailed CV Report</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #050811;
+      --bg-card: rgba(13, 20, 35, 0.45);
+      --border: rgba(255, 255, 255, 0.07);
+      --cyan: #00f2fe;
+      --violet: #7f00ff;
+      --magenta: #e100ff;
+      --text: #ffffff;
+      --text-sec: #9ca3af;
+      --text-muted: #6b7280;
+      --font: 'Outfit', sans-serif;
+      --mono: 'Fira Code', monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--bg);
+      color: var(--text-sec);
+      font-family: var(--font);
+      line-height: 1.7;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .print-btn {
+      background: linear-gradient(135deg, var(--cyan), var(--violet));
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1.5rem;
+      border-radius: 8px;
+      font-family: var(--font);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+    }
+    .print-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(0,242,254,0.3);
+    }
+    .cover {
+      text-align: center;
+      padding: 3rem 0 2rem;
+    }
+    .cover h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--cyan), var(--violet), var(--magenta));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.25rem;
+    }
+    .cover .subtitle {
+      font-family: var(--mono);
+      font-size: 1rem;
+      color: var(--cyan);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+    .cover .tagline {
+      margin-top: 1rem;
+      font-size: 1.15rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      color: var(--text-sec);
+    }
+    .contact-strip {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem 2.5rem;
+      margin: 1.5rem 0 2.5rem;
+      font-size: 0.9rem;
+    }
+    .contact-strip a {
+      color: var(--text);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.3s;
+    }
+    .contact-strip a:hover { color: var(--cyan); }
+    .contact-strip i { color: var(--cyan); width: 16px; }
+
+    .section {
+      margin-bottom: 2.5rem;
+    }
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-title i { color: var(--cyan); font-size: 1.1rem; }
+    .section-title span {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--border), transparent);
+    }
+
+    .summary p {
+      font-size: 1rem;
+      color: var(--text-sec);
+    }
+
+    .edu-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .edu-card h3 { color: var(--text); font-size: 1.15rem; font-weight: 700; }
+    .edu-card .meta {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      color: var(--cyan);
+      margin: 0.25rem 0 0.5rem;
+    }
+    .edu-card .gpa-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.5rem;
+      margin-top: 0.75rem;
+      font-size: 0.9rem;
+    }
+    .edu-card .gpa-grid span {
+      background: rgba(255,255,255,0.03);
+      padding: 0.15rem 0.75rem;
+      border-radius: 4px;
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.75rem;
+    }
+    .skill-tag {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .skill-tag i { color: var(--cyan); width: 18px; }
+    .skill-tag strong { color: var(--text); font-weight: 600; }
+    .skill-tag .lvl {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-left: auto;
+    }
+
+    .exp-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .exp-item h3 { color: var(--text); font-size: 1.1rem; font-weight: 700; }
+    .exp-item .meta {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--violet);
+      margin: 0.15rem 0 0.75rem;
+    }
+    .exp-item p { font-size: 0.95rem; margin-bottom: 0.5rem; }
+    .exp-item ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+    }
+    .exp-item ul li {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      padding: 0.15rem 0.5rem;
+      background: rgba(255,255,255,0.03);
+      border-radius: 4px;
+      color: var(--text-sec);
+    }
+
+    .cert-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .cert-item .left h4 {
+      color: var(--text);
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+    .cert-item .left .issuer {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .cert-item .right {
+      text-align: right;
+      flex-shrink: 0;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-family: var(--mono);
+    }
+
+    .interest-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .interest-tags span {
+      background: linear-gradient(135deg, rgba(0,242,254,0.08), rgba(127,0,255,0.08));
+      border: 1px solid rgba(0,242,254,0.15);
+      border-radius: 50px;
+      padding: 0.4rem 1.2rem;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    .footer-note {
+      text-align: center;
+      padding: 2rem 0 0;
+      border-top: 1px solid var(--border);
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .footer-note .signature {
+      font-family: var(--mono);
+      color: var(--cyan);
+      font-size: 1rem;
+      margin-top: 0.25rem;
+    }
+
+    @media print {
+      body { padding: 0; }
+      .header-bar { display: none; }
+      .print-btn { display: none; }
+      .cover h1 { font-size: 2.5rem; }
+      .cert-item { break-inside: avoid; }
+      .exp-item { break-inside: avoid; }
+      .skill-tag { break-inside: avoid; }
+    }
+    @media (max-width: 768px) {
+      .cert-item { flex-direction: column; align-items: flex-start; }
+      .cert-item .right { text-align: left; }
+      .contact-strip { gap: 0.75rem 1.5rem; font-size: 0.85rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header-bar">
+    <span style="font-family:var(--mono);font-size:0.85rem;color:var(--text-muted);">
+      <i class="fa-regular fa-file-lines" style="color:var(--cyan)"></i> CV Report — Generated May 28, 2026
+    </span>
+    <button class="print-btn" onclick="window.print()">
+      <i class="fa-solid fa-download"></i> Download / Print PDF
+    </button>
+  </div>
+
+  <div class="cover">
+    <div class="subtitle">Detailed Curriculum Vitae</div>
+    <h1>Aveek Patel</h1>
+    <div class="tagline">
+      Computer Science Engineer specializing in AI &amp; ML · AWS Certified Cloud Practitioner (967/1000) · Full-Stack Developer · Systems &amp; Database Architect
+    </div>
+    <div class="contact-strip">
+      <a href="tel:+919548476412"><i class="fa-solid fa-phone"></i> +91 9548476412</a>
+      <a href="mailto:aveekpatel@gmail.com"><i class="fa-solid fa-envelope"></i> aveekpatel@gmail.com</a>
+      <a href="https://github.com/Aveek29" target="_blank"><i class="fa-brands fa-github"></i> github.com/Aveek29</a>
+      <a href="https://linkedin.com/in/aveek-patel-473996327" target="_blank"><i class="fa-brands fa-linkedin"></i> linkedin.com/in/aveek-patel-473996327</a>
+      <span><i class="fa-solid fa-location-dot"></i> Meerut, Uttar Pradesh, India</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">
+      <i class="fa-solid fa-user"></i> Professional Summary <span></span>
+    </div>
+    <div class="summary">
+      <p>
+        Results-driven Computer Science undergraduate specializing in Artificial Intelligence &amp; Machine Learning with a strong, consistent academic record (8.5+ SGPA across all semesters). AWS Certified Cloud Practitioner with a distinguished scaled score of 967/1000. Highly skilled in data structures, algorithmic problem solving, and full-stack web development. Deep proficiency in the Java Spring ecosystem, relational database engineering with PostgreSQL and Hibernate ORM, and theoretical computer science including formal languages and automata theory. Passionate about bridging computer science fundamentals with aerospace research and space systems engineering. Completed 200+ hours of professional bootcamp training across full-stack development, cloud computing, Spring frameworks, and automated machine learning.
+      </p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">
+      <i class="fa-solid fa-graduation-cap"></i> Education <span></span>
+    </div>
+    <div class="edu-card">
+      <h3>B.Tech — Computer Science &amp; Engineering (AI &amp; ML)</h3>
+      <div class="meta">Meerut Institute of Engineering &amp; Technology, Meerut · 2023 – 2027</div>
+      <p style="font-size:0.9rem;color:var(--text-sec);">
+        Affiliated to Dr. A.P.J. Abdul Kalam Technical University (AKTU). Deeply grounded in the foundational pillars of computer science — formal languages &amp; automata theory, computational complexity, algorithmic design, and systems architecture. Specialization in AI &amp; ML layered on a rigorous CS core, with a proven track record of 8.5+ SGPA consistently across all semesters.
+      </p>
+      <div class="gpa-grid">
+        <span>Consistent 8.5+ SGPA across all semesters</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">
+      <i class="fa-solid fa-code"></i> Technical Skills <span></span>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-tag"><i class="fa-brands fa-python"></i> <strong>Python</strong> <span class="lvl">AI/ML</span></div>
+      <div class="skill-tag"><i class="fa-brands fa-java"></i> <strong>Java</strong> <span class="lvl">Hibernate, Spring Boot</span></div>
+      <div class="skill-tag"><i class="fa-solid fa-code"></i> <strong>C Language</strong> <span class="lvl">DSA &amp; Systems</span></div>
+      <div class="skill-tag"><i class="fa-brands fa-js"></i> <strong>JavaScript</strong> <span class="lvl">ES6+, DOM</span></div>
+      <div class="skill-tag"><i class="fa-brands fa-react"></i> <strong>React / Node.js</strong> <span class="lvl">Full-Stack</span></div>
+      <div class="skill-tag"><i class="fa-brands fa-html5"></i> <strong>HTML5 / CSS3</strong> <span class="lvl">Responsive Design</span></div>
+      <div class="skill-tag"><i class="fa-solid fa-leaf"></i> <strong>Spring Boot / Spring AI</strong> <span class="lvl">Microservices, Gen AI</span></div>
+      <div class="skill-tag"><i class="fa-solid fa-sitemap"></i> <strong>Data Structures &amp; Algorithms</strong> <span class="lvl">Advanced DSA</span></div>
+      <div class="skill-tag"><i class="fa-solid fa-microchip"></i> <strong>Algorithmic Complexity</strong> <span class="lvl">Optimization</span></div>
+      <div class="skill-tag"><i class="fa-solid fa-gears"></i> <strong>Automata Theory &amp; FLAT</strong> <span class="lvl">Formal Languages</span></div>
+      <div class="skill-tag"><i class="fa-solid fa-cubes"></i> <strong>Object-Oriented Design</strong> <span class="lvl">SOLID Principles</span></div>
+      <div class="skill-tag"><i class="fa-brands fa-aws"></i> <strong>AWS Cloud Practitioner</strong> <span class="lvl">Score 967/1000</span></div>
+      <div class="skill-tag"><i class="fa-solid fa-cloud-arrow-up"></i> <strong>AWS Cloud Architecting</strong> <span class="lvl">60-Hour Academy</span></div>
+      <div class="skill-tag"><i class="fa-solid fa-database"></i> <strong>PostgreSQL / SQL</strong> <span class="lvl">Schema &amp; Queries</span></div>
+      <div class="skill-tag"><i class="fa-solid fa-layer-group"></i> <strong>Java Hibernate ORM</strong> <span class="lvl">Persistence</span></div>
+      <div class="skill-tag"><i class="fa-solid fa-network-wired"></i> <strong>MongoDB / NoSQL</strong> <span class="lvl">Document Models</span></div>
+      <div class="skill-tag"><i class="fa-brands fa-git-alt"></i> <strong>Git &amp; GitHub</strong> <span class="lvl">Version Control</span></div>
+      <div class="skill-tag"><i class="fa-brands fa-github"></i> <strong>GitHub Pages</strong> <span class="lvl">CD Hosting</span></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">
+      <i class="fa-solid fa-flask"></i> Projects &amp; Engineering Work <span></span>
+    </div>
+
+    <div class="exp-item">
+      <h3>Student Data Management Architecture</h3>
+      <div class="meta">Java · Hibernate ORM · PostgreSQL</div>
+      <p>
+        Engineered a secure backend application using the Java Hibernate framework to effectively map and persist object-oriented properties into a relational schema. Designed and managed a PostgreSQL database environment with optimized indices, data caching, and persistence filters for reliable CRUD operations. Troubleshot schema updates and ensured ACID-compliant data storage and retrieval.
+      </p>
+      <ul><li>Java</li><li>Hibernate ORM</li><li>PostgreSQL</li><li>Schema Design</li><li>SQL</li></ul>
+    </div>
+
+    <div class="exp-item">
+      <h3>Responsive Developer Portfolio — aveekcloud.tech</h3>
+      <div class="meta">HTML5 · CSS3 · JavaScript · Git</div>
+      <p>
+        Built an advanced responsive single-page portfolio using raw HTML5, CSS3, and JavaScript with strict SEO optimization and mobile viewport scaling. Implemented a GPU-accelerated canvas particle background system, glassmorphic design language with dynamic theming, and an interactive typewriter carousel. Engineered with granular Git commit structure and deployed globally via GitHub Pages with custom domain.
+      </p>
+      <ul><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Canvas API</li><li>Git</li><li>GitHub Pages</li></ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">
+      <i class="fa-solid fa-certificate"></i> Professional Certifications &amp; Bootcamps <span></span>
+    </div>
+
+    <div class="cert-item">
+      <div class="left">
+        <h4>AWS Certified Cloud Practitioner</h4>
+        <div class="issuer">AWS Training &amp; Certification · Scaled Score: 967/1000</div>
+      </div>
+      <div class="right">Valid Apr 2026 – Apr 2029</div>
+    </div>
+
+    <div class="cert-item">
+      <div class="left">
+        <h4>AWS Academy Graduate: Cloud Architecting</h4>
+        <div class="issuer">AWS Academy · 60-Hour Comprehensive Curriculum</div>
+      </div>
+      <div class="right">Completed May 22, 2026</div>
+    </div>
+
+    <div class="cert-item">
+      <div class="left">
+        <h4>The Complete Full-Stack Web Development Bootcamp</h4>
+        <div class="issuer">Udemy — Dr. Angela Yu · 62 Total Hours</div>
+      </div>
+      <div class="right">Completed Mar 21, 2026</div>
+    </div>
+
+    <div class="cert-item">
+      <div class="left">
+        <h4>Ultimate AWS Certified Cloud Practitioner CLF-C02 (2026)</h4>
+        <div class="issuer">Udemy — Stephane Maarek · 14.5 Total Hours</div>
+      </div>
+      <div class="right">Completed Apr 15, 2026</div>
+    </div>
+
+    <div class="cert-item">
+      <div class="left">
+        <h4>Java Spring Framework, Spring Boot &amp; Spring AI</h4>
+        <div class="issuer">Udemy — Telusko (Navin Reddy) · 55 Total Hours</div>
+      </div>
+      <div class="right">Completed Mar 21, 2026</div>
+    </div>
+
+    <div class="cert-item">
+      <div class="left">
+        <h4>From Relational Model to MongoDB Document Model</h4>
+        <div class="issuer">MongoDB Academy · Credly Verified</div>
+      </div>
+      <div class="right">Completed Mar 19, 2026</div>
+    </div>
+
+    <div class="cert-item">
+      <div class="left">
+        <h4>MATLAB Machine Learning Onramp</h4>
+        <div class="issuer">MathWorks · Self-Paced Training</div>
+      </div>
+      <div class="right">Completed Sep 02, 2025</div>
+    </div>
+
+    <div class="cert-item">
+      <div class="left">
+        <h4>Automated Machine Learning for Beginners (Google &amp; Apple)</h4>
+        <div class="issuer">Udemy — AlBrain Inc. · 3.5 Total Hours</div>
+      </div>
+      <div class="right">Completed Sep 02, 2025</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">
+      <i class="fa-solid fa-star"></i> Core Competencies &amp; Areas of Interest <span></span>
+    </div>
+    <div class="interest-tags">
+      <span>Artificial Intelligence &amp; Machine Learning</span>
+      <span>Advanced Data Structures &amp; Algorithms</span>
+      <span>Theoretical CS (Automata, Turing Machines, FLAT)</span>
+      <span>Database Architecture (Relational &amp; NoSQL)</span>
+      <span>Cloud Computing &amp; AWS Services</span>
+      <span>Full-Stack Web Development</span>
+      <span>Java Spring Ecosystem</span>
+      <span>Object-Oriented Design &amp; SOLID</span>
+      <span>Aerospace &amp; Space Systems</span>
+      <span>Compiler Design &amp; Formal Grammars</span>
+      <span>Technology Ethics &amp; Human Values</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">
+      <i class="fa-solid fa-globe"></i> Languages <span></span>
+    </div>
+    <div class="skills-grid" style="grid-template-columns:repeat(auto-fill,minmax(150px,1fr))">
+      <div class="skill-tag"><strong>English</strong></div>
+      <div class="skill-tag"><strong>Hindi</strong></div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    <p>I hereby declare that the above information is true and correct to the best of my knowledge.</p>
+    <div class="signature">— Aveek Patel</div>
+    <p style="margin-top:0.5rem;">Meerut, Uttar Pradesh, India · Generated from aveekcloud.tech</p>
+  </div>
+
+</div>
+
+<script>
+  document.querySelector('.print-btn')?.addEventListener('click', () => window.print());
+</script>
+</body>
+</html>
