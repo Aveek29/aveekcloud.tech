@@ -19,6 +19,8 @@ function hideLoader() {
 function initCanvasParticles() {
   const canvas = document.getElementById('bg-canvas');
   if (!canvas) return;
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced) { canvas.style.display = 'none'; return; }
   const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
   const ctx = canvas.getContext('2d');

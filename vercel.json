@@ -3,6 +3,7 @@
   "buildCommand": null,
   "outputDirectory": ".",
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/$1" }
+    { "source": "/api/(.*)", "destination": "/api/$1" },
+    { "source": "/favicon.ico", "destination": "/assets/images/aws-certified-cloud-practitioner.png" }
   ]
 }
