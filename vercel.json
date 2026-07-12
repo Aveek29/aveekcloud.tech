@@ -4,6 +4,6 @@
   "outputDirectory": ".",
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/$1" },
-    { "source": "/favicon.ico", "destination": "/assets/images/aws-certified-cloud-practitioner.png" }
+    { "source": "/favicon.ico", "destination": "/assets/images/aws-certified-solutions-architect-associate.png" }
   ]
 }
