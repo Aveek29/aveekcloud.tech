@@ -4,9 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aveek Patel — Detailed CV Report</title>
+  <meta name="description" content="Detailed CV report of Aveek Patel — Computer Science Engineer specializing in AI & ML, AWS Certified Solutions Architect & Cloud Practitioner, Full-Stack Developer.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://aveekcloud.tech/cv-report.html">
+  <link rel="icon" type="image/png" href="assets/images/aws-certified-solutions-architect-associate.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
   <style>
     :root {
       --bg: #050811;
@@ -122,7 +128,8 @@
       border-bottom: 1px solid var(--border);
     }
     .section-title i { color: var(--cyan); font-size: 1.1rem; }
-    .section-title span {
+    .section-title::after {
+      content: '';
       flex: 1;
       height: 1px;
       background: linear-gradient(90deg, var(--border), transparent);
@@ -140,7 +147,8 @@
       padding: 1.5rem;
       margin-bottom: 1rem;
     }
-    .edu-card h3 { color: var(--text); font-size: 1.15rem; font-weight: 700; }
+    .edu-card h3, .cert-item h3 { color: var(--text); font-size: 1.15rem; font-weight: 700; }
+    .cert-item .left h3 { font-size: 0.95rem; font-weight: 600; }
     .edu-card .meta {
       font-family: var(--mono);
       font-size: 0.85rem;
@@ -238,7 +246,7 @@
       align-items: center;
       gap: 1rem;
     }
-    .cert-item .left h4 {
+    .cert-item .left h3 {
       color: var(--text);
       font-size: 0.95rem;
       font-weight: 600;
@@ -306,32 +314,32 @@
 
   <div class="header-bar">
     <span style="font-family:var(--mono);font-size:0.85rem;color:var(--text-muted);">
-      <i class="fa-regular fa-file-lines" style="color:var(--cyan)"></i> CV Report
+      <i class="fa-regular fa-file-lines" style="color:var(--cyan)" aria-hidden="true"></i> CV Report
     </span>
-    <button class="print-btn" onclick="window.print()">
-      <i class="fa-solid fa-download"></i> Download / Print PDF
+    <button class="print-btn" aria-label="Download or print CV as PDF" onclick="window.print()">
+      <i class="fa-solid fa-download" aria-hidden="true"></i> Download / Print PDF
     </button>
   </div>
 
   <div class="cover">
-    <div class="subtitle">Detailed Curriculum Vitae</div>
     <h1>Aveek Patel</h1>
+    <div class="subtitle">Detailed Curriculum Vitae</div>
     <div class="tagline">
-      Computer Science Engineer specializing in AI &amp; ML · AWS Certified Solutions Architect &amp; Cloud Practitioner · Full-Stack Developer · Systems &amp; Database Architect
+      Computer Science Engineer specializing in AI &amp; ML · AWS Certified Solutions Architect, Developer &amp; AI Practitioner · Full-Stack Developer · Systems &amp; Database Architect
     </div>
     <div class="contact-strip">
-      <a href="tel:+919548476412"><i class="fa-solid fa-phone"></i> +91 9548476412</a>
-      <a href="mailto:aveekpatel@gmail.com"><i class="fa-solid fa-envelope"></i> aveekpatel@gmail.com</a>
-      <a href="https://github.com/Aveek29" target="_blank"><i class="fa-brands fa-github"></i> github.com/Aveek29</a>
-      <a href="https://linkedin.com/in/aveek-patel-473996327" target="_blank"><i class="fa-brands fa-linkedin"></i> linkedin.com/in/aveek-patel-473996327</a>
-      <span><i class="fa-solid fa-location-dot"></i> Meerut, Uttar Pradesh, India</span>
+      <a href="tel:+919548476412"><i class="fa-solid fa-phone" aria-hidden="true"></i> +91 9548476412</a>
+      <a href="mailto:aveekpatel@gmail.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i> aveekpatel@gmail.com</a>
+      <a href="https://github.com/Aveek29" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i> github.com/Aveek29</a>
+      <a href="https://linkedin.com/in/aveek-patel-473996327" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> linkedin.com/in/aveek-patel-473996327</a>
+      <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Meerut, Uttar Pradesh, India</span>
     </div>
   </div>
 
   <div class="section">
-    <div class="section-title">
-      <i class="fa-solid fa-user"></i> Professional Summary <span></span>
-    </div>
+    <h2 class="section-title">
+      <i class="fa-solid fa-user" aria-hidden="true"></i> Professional Summary
+    </h2>
     <div class="summary">
       <p>
         Results-driven Computer Science undergraduate specializing in Artificial Intelligence &amp; Machine Learning with a strong, consistent academic record (8.5+ SGPA across all semesters). AWS Certified Solutions Architect — Associate and AWS Certified Cloud Practitioner. Highly skilled in data structures, algorithmic problem solving, and full-stack web development. Deep proficiency in the Java Spring ecosystem, relational database engineering with PostgreSQL and Hibernate ORM, and theoretical computer science including formal languages and automata theory. Passionate about bridging computer science fundamentals with aerospace research and space systems engineering. Completed 200+ hours of professional bootcamp training across full-stack development, cloud computing, Spring frameworks, and automated machine learning.
@@ -340,9 +348,9 @@
   </div>
 
   <div class="section">
-    <div class="section-title">
-      <i class="fa-solid fa-graduation-cap"></i> Education <span></span>
-    </div>
+    <h2 class="section-title">
+      <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> Education
+    </h2>
     <div class="edu-card">
       <h3>B.Tech — Computer Science &amp; Engineering (AI &amp; ML)</h3>
       <div class="meta">Meerut Institute of Engineering &amp; Technology, Meerut · 2023 – 2027</div>
@@ -356,39 +364,41 @@
   </div>
 
   <div class="section">
-    <div class="section-title">
-      <i class="fa-solid fa-code"></i> Technical Skills <span></span>
-    </div>
+    <h2 class="section-title">
+      <i class="fa-solid fa-code" aria-hidden="true"></i> Technical Skills
+    </h2>
     <div class="skills-grid">
-      <div class="skill-tag"><i class="fa-brands fa-python"></i> <strong>Python</strong> <span class="lvl">AI/ML</span></div>
-      <div class="skill-tag"><i class="fa-brands fa-java"></i> <strong>Java</strong> <span class="lvl">Hibernate, Spring Boot</span></div>
-      <div class="skill-tag"><i class="fa-solid fa-code"></i> <strong>C Language</strong> <span class="lvl">DSA &amp; Systems</span></div>
-      <div class="skill-tag"><i class="fa-brands fa-js"></i> <strong>JavaScript</strong> <span class="lvl">ES6+, DOM</span></div>
-      <div class="skill-tag"><i class="fa-brands fa-react"></i> <strong>React / Node.js</strong> <span class="lvl">Full-Stack</span></div>
-      <div class="skill-tag"><i class="fa-brands fa-html5"></i> <strong>HTML5 / CSS3</strong> <span class="lvl">Responsive Design</span></div>
-      <div class="skill-tag"><i class="fa-solid fa-leaf"></i> <strong>Spring Boot / Spring AI</strong> <span class="lvl">Microservices, Gen AI</span></div>
-      <div class="skill-tag"><i class="fa-solid fa-sitemap"></i> <strong>Data Structures &amp; Algorithms</strong> <span class="lvl">Advanced DSA</span></div>
-      <div class="skill-tag"><i class="fa-solid fa-microchip"></i> <strong>Algorithmic Complexity</strong> <span class="lvl">Optimization</span></div>
-      <div class="skill-tag"><i class="fa-solid fa-gears"></i> <strong>Automata Theory &amp; FLAT</strong> <span class="lvl">Formal Languages</span></div>
-      <div class="skill-tag"><i class="fa-solid fa-cubes"></i> <strong>Object-Oriented Design</strong> <span class="lvl">SOLID Principles</span></div>
-      <div class="skill-tag"><i class="fa-brands fa-aws"></i> <strong>AWS Solutions Architect</strong> <span class="lvl">Associate Level</span></div>
-      <div class="skill-tag"><i class="fa-brands fa-aws"></i> <strong>AWS Cloud Practitioner</strong> <span class="lvl">Certified</span></div>
-      <div class="skill-tag"><i class="fa-solid fa-cloud-arrow-up"></i> <strong>AWS Cloud Architecting</strong> <span class="lvl">60-Hour Academy</span></div>
-      <div class="skill-tag"><i class="fa-solid fa-database"></i> <strong>PostgreSQL / SQL</strong> <span class="lvl">Schema &amp; Queries</span></div>
-      <div class="skill-tag"><i class="fa-solid fa-layer-group"></i> <strong>Java Hibernate ORM</strong> <span class="lvl">Persistence</span></div>
-      <div class="skill-tag"><i class="fa-solid fa-network-wired"></i> <strong>MongoDB / NoSQL</strong> <span class="lvl">Document Models</span></div>
-      <div class="skill-tag"><i class="fa-brands fa-git-alt"></i> <strong>Git &amp; GitHub</strong> <span class="lvl">Version Control</span></div>
-      <div class="skill-tag"><i class="fa-brands fa-github"></i> <strong>GitHub Pages</strong> <span class="lvl">CD Hosting</span></div>
+      <div class="skill-tag"><i class="fa-brands fa-python" aria-hidden="true"></i> <strong>Python</strong> <span class="lvl">AI/ML</span></div>
+      <div class="skill-tag"><i class="fa-brands fa-java" aria-hidden="true"></i> <strong>Java</strong> <span class="lvl">Hibernate, Spring Boot</span></div>
+      <div class="skill-tag"><i class="fa-solid fa-code" aria-hidden="true"></i> <strong>C Language</strong> <span class="lvl">DSA &amp; Systems</span></div>
+      <div class="skill-tag"><i class="fa-brands fa-js" aria-hidden="true"></i> <strong>JavaScript</strong> <span class="lvl">ES6+, DOM</span></div>
+      <div class="skill-tag"><i class="fa-brands fa-react" aria-hidden="true"></i> <strong>React / Node.js</strong> <span class="lvl">Full-Stack</span></div>
+      <div class="skill-tag"><i class="fa-brands fa-html5" aria-hidden="true"></i> <strong>HTML5 / CSS3</strong> <span class="lvl">Responsive Design</span></div>
+      <div class="skill-tag"><i class="fa-solid fa-leaf" aria-hidden="true"></i> <strong>Spring Boot / Spring AI</strong> <span class="lvl">Microservices, Gen AI</span></div>
+      <div class="skill-tag"><i class="fa-solid fa-sitemap" aria-hidden="true"></i> <strong>Data Structures &amp; Algorithms</strong> <span class="lvl">Advanced DSA</span></div>
+      <div class="skill-tag"><i class="fa-solid fa-microchip" aria-hidden="true"></i> <strong>Algorithmic Complexity</strong> <span class="lvl">Optimization</span></div>
+      <div class="skill-tag"><i class="fa-solid fa-gears" aria-hidden="true"></i> <strong>Automata Theory &amp; FLAT</strong> <span class="lvl">Formal Languages</span></div>
+      <div class="skill-tag"><i class="fa-solid fa-cubes" aria-hidden="true"></i> <strong>Object-Oriented Design</strong> <span class="lvl">SOLID Principles</span></div>
+      <div class="skill-tag"><i class="fa-brands fa-aws" aria-hidden="true"></i> <strong>AWS Solutions Architect</strong> <span class="lvl">Associate Level</span></div>
+      <div class="skill-tag"><i class="fa-solid fa-code" aria-hidden="true"></i> <strong>AWS Developer</strong> <span class="lvl">Associate Level</span></div>
+      <div class="skill-tag"><i class="fa-solid fa-robot" aria-hidden="true"></i> <strong>AWS AI Practitioner</strong> <span class="lvl">AI/ML Cloud</span></div>
+      <div class="skill-tag"><i class="fa-brands fa-aws" aria-hidden="true"></i> <strong>AWS Cloud Practitioner</strong> <span class="lvl">Certified</span></div>
+      <div class="skill-tag"><i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i> <strong>AWS Cloud Architecting</strong> <span class="lvl">60-Hour Academy</span></div>
+      <div class="skill-tag"><i class="fa-solid fa-database" aria-hidden="true"></i> <strong>PostgreSQL / SQL</strong> <span class="lvl">Schema &amp; Queries</span></div>
+      <div class="skill-tag"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> <strong>Java Hibernate ORM</strong> <span class="lvl">Persistence</span></div>
+      <div class="skill-tag"><i class="fa-solid fa-network-wired" aria-hidden="true"></i> <strong>MongoDB / NoSQL</strong> <span class="lvl">Document Models</span></div>
+      <div class="skill-tag"><i class="fa-brands fa-git-alt" aria-hidden="true"></i> <strong>Git &amp; GitHub</strong> <span class="lvl">Version Control</span></div>
+      <div class="skill-tag"><i class="fa-brands fa-github" aria-hidden="true"></i> <strong>GitHub Pages</strong> <span class="lvl">CD Hosting</span></div>
     </div>
   </div>
 
   <div class="section">
-    <div class="section-title">
-      <i class="fa-solid fa-flask"></i> Projects &amp; Engineering Work <span></span>
-    </div>
+    <h2 class="section-title">
+      <i class="fa-solid fa-flask" aria-hidden="true"></i> Projects &amp; Engineering Work
+    </h2>
 
     <div class="exp-item">
-      <h3>Spring Boot & Framework — Learning Suite <a href="https://github.com/Aveek29/Spring-projects" target="_blank" class="proj-link" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a></h3>
+      <h3>Spring Boot & Framework — Learning Suite <a href="https://github.com/Aveek29/Spring-projects" target="_blank" class="proj-link" rel="noopener noreferrer" aria-label="GitHub repository for Spring Boot Learning Suite"><i class="fa-brands fa-github" aria-hidden="true"></i></a></h3>
       <div class="meta">Java · Spring Boot · Spring MVC · Spring Data JPA · Spring Security</div>
       <p>
         Comprehensive collection of Spring Boot and Spring Framework projects covering the full ecosystem — dependency injection, REST APIs, data persistence with JPA/Hibernate, security with JWT authentication, AOP for cross-cutting concerns, MVC architecture, and React UI integration. Demonstrates end-to-end backend engineering with industry-standard patterns.
@@ -397,7 +407,7 @@
     </div>
 
     <div class="exp-item">
-      <h3>Responsive Developer Portfolio — aveekcloud.tech <a href="https://github.com/Aveek29/aveekcloud.tech" target="_blank" class="proj-link" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a> <a href="https://aveekcloud-tech.vercel.app" target="_blank" class="proj-link" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></h3>
+      <h3>Responsive Developer Portfolio — aveekcloud.tech <a href="https://github.com/Aveek29/aveekcloud.tech" target="_blank" class="proj-link" rel="noopener noreferrer" aria-label="GitHub repository for aveekcloud.tech"><i class="fa-brands fa-github" aria-hidden="true"></i></a> <a href="https://aveekcloud-tech.vercel.app" target="_blank" class="proj-link" rel="noopener noreferrer" aria-label="Live site for aveekcloud.tech"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></h3>
       <div class="meta">HTML5 · CSS3 · JavaScript · Git</div>
       <p>
         Built an advanced responsive single-page portfolio using raw HTML5, CSS3, and JavaScript with strict SEO optimization and mobile viewport scaling. Implements a GPU-accelerated canvas particle background system, glassmorphic design language with dynamic theming, and an interactive typewriter carousel. Serverless API for email delivery. Deployed on Vercel with custom domain.
@@ -406,7 +416,7 @@
     </div>
 
     <div class="exp-item">
-      <h3>Core Computer Concepts Explorer <a href="https://github.com/Aveek29/AI-Powered-Automata-Builder" target="_blank" class="proj-link" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a></h3>
+      <h3>Core Computer Concepts Explorer <a href="https://github.com/Aveek29/AI-Powered-Automata-Builder" target="_blank" class="proj-link" rel="noopener noreferrer" aria-label="GitHub repository for Core Computer Concepts Explorer"><i class="fa-brands fa-github" aria-hidden="true"></i></a></h3>
       <div class="meta">JavaScript · Core Concepts · AI Integration</div>
       <p>
         An interactive platform exploring foundational CS principles — formal languages, state machines, computability, and algorithmic thinking. Bridges theoretical computer science with hands-on visualization and AI-assisted learning tools.
@@ -415,7 +425,7 @@
     </div>
 
     <div class="exp-item">
-      <h3>AWS Cloud Infrastructure Lab <a href="https://github.com/Aveek29/Project-AWS" target="_blank" class="proj-link" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a></h3>
+      <h3>AWS Cloud Infrastructure Lab <a href="https://github.com/Aveek29/Project-AWS" target="_blank" class="proj-link" rel="noopener noreferrer" aria-label="GitHub repository for AWS Cloud Infrastructure Lab"><i class="fa-brands fa-github" aria-hidden="true"></i></a></h3>
       <div class="meta">AWS EC2 · AWS S3 · AWS IAM</div>
       <p>
         Hands-on cloud infrastructure project exploring AWS core services including EC2 compute, S3 storage, IAM security policies, and VPC networking. Demonstrates practical cloud architecture and deployment strategies aligned with AWS best practices.
@@ -424,7 +434,7 @@
     </div>
 
     <div class="exp-item">
-      <h3>AI-Powered Notes Summarization Engine <a href="https://github.com/Aveek29/AI-Notes-Summarizer" target="_blank" class="proj-link" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a></h3>
+      <h3>AI-Powered Notes Summarization Engine <a href="https://github.com/Aveek29/AI-Notes-Summarizer" target="_blank" class="proj-link" rel="noopener noreferrer" aria-label="GitHub repository for AI-Powered Notes Summarization Engine"><i class="fa-brands fa-github" aria-hidden="true"></i></a></h3>
       <div class="meta">JavaScript · NLP · AI Summarization</div>
       <p>
         An AI-powered tool that automatically generates concise summaries from lengthy notes and documents. Leverages natural language processing techniques to extract key concepts, reduce redundancy, and produce structured, readable summaries for efficient study and review.
@@ -433,7 +443,7 @@
     </div>
 
     <div class="exp-item">
-      <h3>SkillSense AI Recommendation Engine <a href="https://github.com/Aveek29/SkillSense-AI" target="_blank" class="proj-link" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a></h3>
+      <h3>SkillSense AI Recommendation Engine <a href="https://github.com/Aveek29/SkillSense-AI" target="_blank" class="proj-link" rel="noopener noreferrer" aria-label="GitHub repository for SkillSense AI"><i class="fa-brands fa-github" aria-hidden="true"></i></a></h3>
       <div class="meta">Python · Machine Learning · Skill Assessment</div>
       <p>
         An intelligent skill assessment and recommendation platform built with Python. Analyzes user competencies, identifies skill gaps, and provides personalized learning pathways using machine learning algorithms to match industry demands.
@@ -442,7 +452,7 @@
     </div>
 
     <div class="exp-item">
-      <h3>TrustCare Healthcare Management System <a href="https://github.com/Aveek29/TrustCare-Management-System" target="_blank" class="proj-link" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a></h3>
+      <h3>TrustCare Healthcare Management System <a href="https://github.com/Aveek29/TrustCare-Management-System" target="_blank" class="proj-link" rel="noopener noreferrer" aria-label="GitHub repository for TrustCare Management System"><i class="fa-brands fa-github" aria-hidden="true"></i></a></h3>
       <div class="meta">TypeScript · Full-Stack · Database Design</div>
       <p>
         A full-stack healthcare management platform built with TypeScript. Streamlines patient records, appointment scheduling, and care coordination with a secure, type-safe architecture designed for reliability and scalability.
@@ -451,7 +461,7 @@
     </div>
 
     <div class="exp-item">
-      <h3>CloudPath — Interactive Developer Roadmap Platform <a href="https://github.com/Aveek29/Road-Map-Planner" target="_blank" class="proj-link" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a> <a href="https://dl4b6gz4btpza.cloudfront.net/" target="_blank" class="proj-link" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></h3>
+      <h3>CloudPath — Interactive Developer Roadmap Platform <a href="https://github.com/Aveek29/Road-Map-Planner" target="_blank" class="proj-link" rel="noopener noreferrer" aria-label="GitHub repository for CloudPath Roadmap Platform"><i class="fa-brands fa-github" aria-hidden="true"></i></a> <a href="https://dl4b6gz4btpza.cloudfront.net/" target="_blank" class="proj-link" rel="noopener noreferrer" aria-label="Live site for CloudPath Roadmap Platform"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></h3>
       <div class="meta">React 19 · Vite 8 · Tailwind CSS v4 · Framer Motion · AWS S3/CloudFront</div>
       <p>
         A fully static frontend developer roadmap platform with 50+ roadmaps and 316+ learning nodes across Frontend, Backend, DevOps, AI/ML, and Cloud. Features progress tracking with streaks and badges, 17 accent color themes, light/dark mode, topic search, and curated course links. Built with React 19 + Vite 8 — no backend, no database. Deployed on AWS S3 with CloudFront CDN.
@@ -460,7 +470,7 @@
     </div>
 
     <div class="exp-item">
-      <h3>ResumeForge AI — Resume Builder <a href="https://github.com/Aveek29/Resume-Builder" target="_blank" class="proj-link" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a> <a href="http://aveek.ap-south-1.elasticbeanstalk.com" target="_blank" class="proj-link" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></h3>
+      <h3>ResumeForge AI — Resume Builder <a href="https://github.com/Aveek29/Resume-Builder" target="_blank" class="proj-link" rel="noopener noreferrer" aria-label="GitHub repository for ResumeForge AI"><i class="fa-brands fa-github" aria-hidden="true"></i></a> <a href="http://aveek.ap-south-1.elasticbeanstalk.com" target="_blank" class="proj-link" rel="noopener noreferrer" aria-label="Live site for ResumeForge AI"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></h3>
       <div class="meta">TypeScript · React · AI · AWS Elastic Beanstalk</div>
       <p>
         An intelligent resume-building platform that combines AI-powered content enhancement, professional templates, real-time previews, and career guidance for job seekers. Features dynamic form-based resume generation with multiple layout options and export capabilities. Deployed on AWS Elastic Beanstalk for scalable cloud hosting.
@@ -470,13 +480,13 @@
   </div>
 
   <div class="section">
-    <div class="section-title">
-      <i class="fa-solid fa-certificate"></i> Professional Certifications &amp; Bootcamps <span></span>
-    </div>
+    <h2 class="section-title">
+      <i class="fa-solid fa-certificate" aria-hidden="true"></i> Professional Certifications &amp; Bootcamps
+    </h2>
 
     <div class="cert-item">
       <div class="left">
-        <h4>AWS Certified Solutions Architect — Associate</h4>
+        <h3>AWS Certified Solutions Architect — Associate</h3>
         <div class="issuer">AWS Training &amp; Certification</div>
       </div>
       <div class="right">Valid 2026 – 2029</div>
@@ -484,7 +494,23 @@
 
     <div class="cert-item">
       <div class="left">
-        <h4>AWS Certified Cloud Practitioner</h4>
+        <h3>AWS Certified Developer — Associate</h3>
+        <div class="issuer">AWS Training &amp; Certification</div>
+      </div>
+      <div class="right">Valid 2026 – 2029</div>
+    </div>
+
+    <div class="cert-item">
+      <div class="left">
+        <h3>AWS Certified AI Practitioner</h3>
+        <div class="issuer">AWS Training &amp; Certification</div>
+      </div>
+      <div class="right">Valid 2026 – 2029</div>
+    </div>
+
+    <div class="cert-item">
+      <div class="left">
+        <h3>AWS Certified Cloud Practitioner</h3>
         <div class="issuer">AWS Training &amp; Certification</div>
       </div>
       <div class="right">Valid Apr 2026 – Apr 2029</div>
@@ -492,7 +518,7 @@
 
     <div class="cert-item">
       <div class="left">
-        <h4>AWS Academy Graduate: Cloud Architecting</h4>
+        <h3>AWS Academy Graduate: Cloud Architecting</h3>
         <div class="issuer">AWS Academy · 60-Hour Comprehensive Curriculum</div>
       </div>
       <div class="right">Completed May 22, 2026</div>
@@ -500,7 +526,7 @@
 
     <div class="cert-item">
       <div class="left">
-        <h4>The Complete Full-Stack Web Development Bootcamp</h4>
+        <h3>The Complete Full-Stack Web Development Bootcamp</h3>
         <div class="issuer">Udemy — Dr. Angela Yu · 62 Total Hours</div>
       </div>
       <div class="right">Completed Mar 21, 2026</div>
@@ -508,7 +534,7 @@
 
     <div class="cert-item">
       <div class="left">
-        <h4>Ultimate AWS Certified Cloud Practitioner CLF-C02 (2026)</h4>
+        <h3>Ultimate AWS Certified Cloud Practitioner CLF-C02 (2026)</h3>
         <div class="issuer">Udemy — Stephane Maarek · 14.5 Total Hours</div>
       </div>
       <div class="right">Completed Apr 15, 2026</div>
@@ -516,7 +542,7 @@
 
     <div class="cert-item">
       <div class="left">
-        <h4>Java Spring Framework, Spring Boot &amp; Spring AI</h4>
+        <h3>Java Spring Framework, Spring Boot &amp; Spring AI</h3>
         <div class="issuer">Udemy — Telusko (Navin Reddy) · 55 Total Hours</div>
       </div>
       <div class="right">Completed Mar 21, 2026</div>
@@ -524,7 +550,7 @@
 
     <div class="cert-item">
       <div class="left">
-        <h4>From Relational Model to MongoDB Document Model</h4>
+        <h3>From Relational Model to MongoDB Document Model</h3>
         <div class="issuer">MongoDB Academy · Credly Verified</div>
       </div>
       <div class="right">Completed Mar 19, 2026</div>
@@ -532,7 +558,7 @@
 
     <div class="cert-item">
       <div class="left">
-        <h4>MATLAB Machine Learning Onramp</h4>
+        <h3>MATLAB Machine Learning Onramp</h3>
         <div class="issuer">MathWorks · Self-Paced Training</div>
       </div>
       <div class="right">Completed Sep 02, 2025</div>
@@ -540,7 +566,7 @@
 
     <div class="cert-item">
       <div class="left">
-        <h4>Automated Machine Learning for Beginners (Google &amp; Apple)</h4>
+        <h3>Automated Machine Learning for Beginners (Google &amp; Apple)</h3>
         <div class="issuer">Udemy — AlBrain Inc. · 3.5 Total Hours</div>
       </div>
       <div class="right">Completed Sep 02, 2025</div>
@@ -548,9 +574,9 @@
   </div>
 
   <div class="section">
-    <div class="section-title">
-      <i class="fa-solid fa-star"></i> Core Competencies &amp; Areas of Interest <span></span>
-    </div>
+    <h2 class="section-title">
+      <i class="fa-solid fa-star" aria-hidden="true"></i> Core Competencies &amp; Areas of Interest
+    </h2>
     <div class="interest-tags">
       <span>Artificial Intelligence &amp; Machine Learning</span>
       <span>Advanced Data Structures &amp; Algorithms</span>
@@ -567,9 +593,9 @@
   </div>
 
   <div class="section">
-    <div class="section-title">
-      <i class="fa-solid fa-globe"></i> Languages <span></span>
-    </div>
+    <h2 class="section-title">
+      <i class="fa-solid fa-globe" aria-hidden="true"></i> Languages
+    </h2>
     <div class="skills-grid" style="grid-template-columns:repeat(auto-fill,minmax(150px,1fr))">
       <div class="skill-tag"><strong>English</strong></div>
       <div class="skill-tag"><strong>Hindi</strong></div>
@@ -584,8 +610,5 @@
 
 </div>
 
-<script>
-  document.querySelector('.print-btn')?.addEventListener('click', () => window.print());
-</script>
 </body>
 </html>
