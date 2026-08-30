@@ -144,7 +144,7 @@ function initTypewriter() {
   if (!target) return;
 
   const words = [
-    'AWS Certified Cloud Practitioner (967/1000)',
+    'AWS Certified Machine Learning Engineer',
     'Cloud & Systems Architect',
     'AI & Machine Learning Engineer',
     'Full-Stack Web Developer',
